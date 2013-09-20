@@ -62,6 +62,8 @@
         
         [self configureFromStyle];
     }
+    
+    [self applyBackButtonStyles];
 }
 
 -(void)touchDown {
@@ -114,7 +116,7 @@
         UIGraphicsEndImageContext();
     }
     else {
-        CGRect rect = CGRectMake(0, 0, newSize.width, newSize.height);
+        CGRect rect = CGRectMake(0, 0, newSize.width * [UIScreen mainScreen].scale, newSize.height * [UIScreen mainScreen].scale);
         CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
         
         UIGraphicsBeginImageContextWithOptions(newSize, NO, 0);
@@ -274,7 +276,6 @@
         [_controlStates addObject:[NSNumber numberWithInteger:state]];
     }
 }
-
 
 // Applies the stored properties to the control
 -(void)styleViaStoredValueNamesAndStates{

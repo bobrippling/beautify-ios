@@ -12,7 +12,7 @@
 
 +(BYLabelStyle*)defaultStyle {
     BYLabelStyle *style = [BYLabelStyle new];
-    BYFont* textFont = [BYFont new];
+    BYFont* textFont = [[BYFont alloc] initWithName:@"Zapfino" andSize:16.0f];
     style.title = [[BYText alloc] initWithFont:textFont color:[UIColor blackColor]];
     style.titleShadow = nil;
     return style;

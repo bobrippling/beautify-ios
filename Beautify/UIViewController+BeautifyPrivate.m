@@ -13,6 +13,8 @@
 #import "BYStyleRenderer.h"
 #import "BYStyleRenderer_Private.h"
 #import "BYThemeManager_Private.h"
+#import "BYBarButtonItemRenderer_Private.h"
+#import "UIBarButtonItem+Beautify.h"
 
 @implementation UIViewController (BeautifyPrivate)
 

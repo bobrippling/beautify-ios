@@ -121,7 +121,7 @@
     
     // UINavigationBar and UITabBar labels should not be styled by the standard UILabel styling.
     if([self isKindOfClass:[UILabel class]]) {
-        [names addObjectsFromArray:@[@"UINavigationBar", @"UITabBar"]];
+        [names addObjectsFromArray:@[@"UINavigationBar", @"UITabBar", @"UINavigationItemView"]];
     }
     
     // Modal/Alert Views

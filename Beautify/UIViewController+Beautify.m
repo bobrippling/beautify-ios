@@ -15,6 +15,9 @@
 #import "UIView+BeautifyPrivate.h"
 #import "UIView+Beautify.h"
 
+#import "UIBarButtonItem+Beautify.h"
+#import "BYBarButtonItemRenderer_Private.h"
+
 @implementation UIViewController (Beautify)
 
 -(BYStyleRenderer*)renderer {
@@ -26,6 +29,16 @@
 -(void)override_viewDidLoad {
     if([self shouldCreateRenderer]) {
         [self createRenderer];
+        
+        UIBarButtonItem *clearAll = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(trashMethod)];
+
+        self.navigationItem.backBarButtonItem = clearAll;
+        
+        [self.navigationItem.backBarButtonItem createRenderer];
+        
+        BYBarButtonItemRenderer *renderer = [self.navigationItem.backBarButtonItem renderer];
+        
+        [renderer applyBackButtonStyles];
     }
     [self override_viewDidLoad];
 }
